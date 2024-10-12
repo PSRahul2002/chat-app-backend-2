@@ -22,12 +22,14 @@ messages_user2 = db['messages_user_2']  # Collection for User2's messages
 
 # Configure CORS for your frontend domain
 frontend_url = os.getenv('FRONTEND_URL', '*')  # Default is '*' for development, but secure in production
+from fastapi.middleware.cors import CORSMiddleware
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[frontend_url],  # Use environment variable to control CORS
+    allow_origins=["https://psrahul2002.github.io"],  # Allow requests from your frontend domain
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["*"],  # Allow all HTTP methods (GET, POST, DELETE, etc.)
+    allow_headers=["*"],  # Allow all headers
 )
 
 # WebSocket connection manager to handle multiple connections
