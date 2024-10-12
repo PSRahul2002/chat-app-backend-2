@@ -1,0 +1,5 @@
+fastapi==0.95.2
+uvicorn==0.22.0
+motor==3.1.1   # MongoDB driver (async)
+pymongo==4.5.0 # MongoDB core driver (used internally by motor)
+python-dotenv==1.0.0  # For loading .env files in local development
